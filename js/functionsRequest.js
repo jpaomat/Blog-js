@@ -91,3 +91,31 @@ function removeContent(element){
         element.removeChild(element.firstChild);
     }
 }
+function browser(info){
+    let user= info.data[0];
+    let id =user.id;
+    console.log(id);
+    console.log(user.name);
+    const list = document.getElementById('list');
+    const fragment = document.createDocumentFragment();
+    const li = document.createElement('li');
+    li.textContent= `${user.name}-${user.email}`;
+    fragment.appendChild(li);
+    list.appendChild(fragment);
+    getElements('https://jsonplaceholder.typicode.com/posts?userId='+id, function(a){
+      console.log((a.data));
+      var tam = (a.data).length;
+      if(tam!=0){
+        const list =document.getElementById('list');
+        const fragment = document.createDocumentFragment();
+        for(postUser of a.data){
+            console.log(postUser);
+            const li= document.createElement('li');
+          li.textContent= `${postUser.title}`;
+          fragment.appendChild(li);
+        }
+        list.appendChild(fragment);
+      }    
+    });
+  }
+  

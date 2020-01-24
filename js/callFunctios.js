@@ -8,5 +8,13 @@ const photosURL='https://jsonplaceholder.typicode.com/photos';
       showUsers(a);
   });
   getElements(postURL, function(a){
-    lastPost(a);
-});
+    lastPost(a);  
+  });
+  const dato= document.getElementById('browser').value;
+  const tipo=document.getElementById('tipo').value;
+  //https://jsonplaceholder.typicode.com/users?name_like=Howe
+  var url ="https://jsonplaceholder.typicode.com/users?name_like=";
+  url +=dato;
+  getElements(url, function(a){
+      browser(a);
+  });
