@@ -13,7 +13,9 @@ function lastPost(info){
     const rta =info.data;
     console.log(rta.length);
     //console.log(rta[2].title);
-    const divPost= document.getElementById('posts');
+    const showInfo= document.getElementById('showInfo');
+    const divPost= document.createElement('div');
+    divPost.setAttribute('class','row aux');
     const fragment= document.createDocumentFragment();
     for(let i=rta.length-1; i>(rta.length)-6; i--){
         /*const li=document.createElement('li');
@@ -37,7 +39,22 @@ function lastPost(info){
         fragment.appendChild(divCard);
     };
     divPost.appendChild(fragment);
+    showInfo.appendChild(divPost);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function showUsers(info){
     const divUsers = document.getElementById('users');
     const fragment= document.createDocumentFragment();
@@ -86,11 +103,7 @@ function createElementsHtml(){
     const a= document.createElement('a');
     return [img,div,h6,i,a,p];
 }
-function removeContent(element){
-    while (element.firstChild) {
-        element.removeChild(element.firstChild);
-    }
-}
+
 function browser(info){
     let user= info.data[0];
     let id =user.id;
@@ -118,4 +131,10 @@ function browser(info){
       }    
     });
   }
-  
+  function removeContent(element1){
+    while(element1.childNodes[1]!=null){
+    console.log(element1.childNodes[1]);
+    element1.removeChild(element1.childNodes[1]);
+  }
+
+} 
