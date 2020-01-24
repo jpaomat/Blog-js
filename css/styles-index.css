@@ -34,6 +34,11 @@ header .button{
   padding-left: 10px;
   padding-right: 10px;
 }
+.card-body{
+  background-color: rgba(119, 122, 128, 0.418);
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .content-center{
   text-align: center;
 }
@@ -41,8 +46,10 @@ header .button{
   font-family: 'pacifico', cursive;
 }
 .card{
-  height: 250px;
-  
+  height: 250px; 
+}
+#post .card{
+  height: 180px;
 }
 .icon{
   margin: 0px 5px;

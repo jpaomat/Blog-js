@@ -9,21 +9,34 @@ function getElements(url, fn){
         console.log('executed successfuly');
     })   
 }
-function Users(info){
-    console.log('getting users',info.data);
-    const list = document.getElementById('list');
+function lastPost(info){
+    const rta =info.data;
+    console.log(rta.length);
+    //console.log(rta[2].title);
+    const divPost= document.getElementById('posts');
     const fragment= document.createDocumentFragment();
-    var usersBack={};
-    for( const users of info.data){
-        const li= document.createElement('li');
-        li.textContent=  `${users.id} -${users.name}`;
-        fragment.appendChild(li);
-        //usersBack[`${users.id}`-0]={id:`${users.id}`};
-    }
-    list.appendChild(fragment);
-}
-function prueba(info){
-    
+    for(let i=rta.length-1; i>(rta.length)-6; i--){
+        /*const li=document.createElement('li');
+        li.textContent=`${rta[i].title}`;
+        console.log(li);
+        fragment.appendChild(li);*/
+        const cardBody= document.createElement('div');
+        cardBody.setAttribute('class','card-body');
+        const title= document.createElement('h5');
+        title.textContent= `${rta[i].title}`;
+        const content= document.createElement('p');
+        content.textContent=`${rta[i].body}`;  
+        cardBody.appendChild(title);    
+        cardBody.appendChild(content);
+        const card = document.createElement('div');
+        card.setAttribute('class','card');
+        card.appendChild(cardBody);
+        const divCard= document.createElement('div');
+        divCard.setAttribute('class','col-lg-9 p-3');
+        divCard.appendChild(card);
+        fragment.appendChild(divCard);
+    };
+    divPost.appendChild(fragment);
 }
 function showUsers(info){
     const divUsers = document.getElementById('users');
