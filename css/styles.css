@@ -1,0 +1,9 @@
+.user-color{
+    background-color: rgba(147, 157, 175, 0.349);
+}
+.content-center{
+    text-align: center;
+}
+.h2,p,h3{
+    font-family: 'pacifico', cursive;
+}

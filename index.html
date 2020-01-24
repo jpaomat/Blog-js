@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog</title>
+    <link rel="stylesheet" href="pluggins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="pluggins/skeleton/normalize.css">
+    <link rel="stylesheet" href="pluggins/skeleton/skeleton.css">
+    <link rel="stylesheet" href="css/styles-index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="title">
+                <h2><i class="fas fa-film"></i> Pelis.blog</h2>
+            </div>
+            <div class="browser">
+                <a class="button" href="html/users.html">Ver usuarios</a>
+                <input type="text" name="browser" id="browser" placeholder="ingrese el texto">
+                <select name="" id="">
+                    <option value="user">Usuario</option>
+                    <option value="post">Post</option>
+                    <option value="comment">Comentario</option>
+                </select>
+            <a class="button" href="#">Buscar</a>
+            </div>
+        </div>
+    </header>
+    <section class="container user-color text-center">
+        <div class="container-fluid p-3">
+            <div class="container-center">
+                <h2>¡Lo reciente</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe tenetur optio facere ea modi eos molestiae eius suscipit quisquam accusamus, et inventore, reprehenderit eveniet doloribus atque repellendus, provident quasi omnis.</p>
+            </div>
+            <div class="row" id="posts">
+
+            </div>
+        </div>
+    </section>
+    <h1>my blog</h1>
+    <button id="button1">get users</button>
+    <button id="button2">get posts</button>
+    <button id="button3">get images</button>
+    <div>
+        <input type="text" name="browser" id="browser" placeholder="ingrese el nombre">
+        <button id="button4" >buscar</button> 
+    </div>
+    <ul id="list"></ul>
+    <section id="post" class="post">
+        <h2 id="title"></h2>
+        <p id="body-post"></p>
+    </section>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!--<script src="js/getPosts.js"></script>-->
+<!--<script src="js/peticiones.js"></script>-->
+<script src="js/functionsRequest.js"></script>
+<script src="js/callFunctios.js"></script>
+</body>
+
+</html>
